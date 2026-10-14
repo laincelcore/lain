@@ -1,0 +1,251 @@
+
+<section class="lain-terminal">
+
+  <div class="lain-topbar">
+    <span class="lain-status">● CONNECTION ESTABLISHED</span>
+    <span>FILE: 001-LAIN</span>
+  </div>
+
+  <div class="lain-title">
+    <span class="glitch" data-text="岩倉 玲音">岩倉 玲音</span>
+    <p> PRESENT DAY · PRESENT TIME </p>
+  </div>
+
+  <div class="lain-art-container">
+<pre class="lain-art">
+                     .:--==+++**+--:.    .    .
+                .=#▒▓███▓▓███▓▒░░░##+====:.   ..
+             :*▒██████████▓▓▒▒▒▒▒▓▓░-  .*░+-...-.
+           :#██████████████▓▓▒░░▒▓█░=:   =▒█░*=+-
+         .+▒███████████████████▓▓▓██▓░*==+++#+::.
+        :░▓███████████████████░*--+░███▒#=--- 
+       +▒▓██████████████▓▓███▓-    =#░▒▒▒*=-.
+      ░████████████████▓▓▓▓▓██▓#+=+++-.-++-.
+     #██████████▓███████▓▓████████▓░+-.:=:
+    =██████████▓▓████▓██▓▓▓▓▓█████=      :-
+    ▒█████████▓▓▓███████▓▒▒▓▓██████▒#+:
+   :▓█████████▓██████████▓▓▓▓▓████████▓=
+   =█████████████████████████████▓█████▓+
+   =█████████████████████████████░#█▓▓███▒#+
+   =███████████████▓#++▓█▓#▓█▒░#▓░*▓▓#▒███████▓▒░
+   :▓██████████████▓*+-+▓=-+###*#####*#▒██████████+
+   .▓███████████████░=  +   :=+*░▓█████▓█▒▒███████+
+    ██████████████###-        .*████████▒█▒████▒██#
+    ▓██████████##▒░#*-.        :#*#▓███▒░░##██░▓██#
+    ▒█████████▒#▒████*           :-+#░░░#+=+▒███▓▓#
+    =░░███████████████-              ..   .-▓████▒██
+     --████████▓=▒███▒.                    .▒██████
+       ▓█░█████▒###*-                       #██████
+       +█+=████▓-                           #█████░
+        #. ▒███▒░.        .                -██████
+           +▒+██▓░:                       -#▓████▓-
+            # -████+        .            -+=░██▓█#
+            .  .-.░#==.                :=-==░█▓▒▓+
+                     =#*=:           .:-----#▓▒░▒-
+                   :-=+*#░#*=:.  .:::---. .-#▓▒░░:
+                  -=----===+*##░░░░*=-:    :░▒░░#
+                :===--:::-=-:::=+++=+==-::-+▒▒░#*
+              .=*++###░░░▒░#****=..::--:::---*░░*:
+            .--==+==++#░░▒▓▓▒░░░░*:  .=**#+++░▒▒#
+          .    .  .::::-*░░▒▒░##:.::.:::::.:+▒▒█=
+          : -  .   .:::-+#░▒░░#=            .*##
+        :  =.  .   :-++=+##+=.             =▓▒.
+        -: :-  ..  .: ..::..::::.          -░:
+        :.  *+  ..  .:.   .    .:-:.       =.
+       ..   :+:   .  ::.         .::
+       +:  : ==.      .:             
+       #░  :. ::       .:                  
+       #▓*  : .::       :.                 
+      :: +# .:.--=.      :.           
+      -   --.+-=--=:      :           
+     :.    ::::.::::.     ..            
+     +     -:--..:::-:      ..
+    :*      -=++ =+==-==:   ..::
+    =*.     .::= .:-=-.+#=. :=:=+-:
+</pre>
+  </div>
+
+  <div class="lain-caption">
+    <span>░▒▓ L A I N  I W A K U R A ▓▒░</span>
+    <p>NO MATTER WHERE YOU GO, EVERYONE IS CONNECTED.</p>
+  </div>
+
+  <div class="lain-footer">
+    <span>WIRED://IDENTITY/001</span>
+    <span id="lain-clock">CONNECTING...</span>
+  </div>
+
+</section>
+
+<style>
+.lain-terminal {
+  --lain-green: #8cffb1;
+  --lain-dim: #47785b;
+  position: relative;
+  width: min(100%, 720px);
+  margin: 40px auto;
+  padding: 22px;
+  box-sizing: border-box;
+  overflow: hidden;
+  color: var(--lain-green);
+  background: #050807;
+  border: 1px solid #315640;
+  font-family: "Courier New", monospace;
+  box-shadow: 0 0 25px #41ff8410,
+              inset 0 0 35px #00ff1608;
+}
+
+/* scanlines */
+.lain-terminal::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0px,
+    transparent 3px,
+    #00000028 4px
+  );
+}
+
+.lain-topbar,
+.lain-footer {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  font-size: 10px;
+  letter-spacing: 1px;
+  color: var(--lain-dim);
+}
+
+.lain-status {
+  animation: lainBlink 1.6s infinite;
+}
+
+.lain-title {
+  text-align: center;
+  padding: 30px 0 15px;
+}
+
+.glitch {
+  display: inline-block;
+  font-size: clamp(30px, 7vw, 52px);
+  font-weight: bold;
+  letter-spacing: 8px;
+  text-shadow: 2px 0 #ff315c, -2px 0 #00eaff;
+  animation: lainGlitch 4s infinite;
+}
+
+.lain-title p {
+  font-size: 10px;
+  letter-spacing: 4px;
+  color: #b4c9b9;
+}
+
+.lain-art-container {
+  width: 100%;
+  overflow-x: auto;
+  scrollbar-color: #315640 #050807;
+}
+
+.lain-art {
+  width: max-content;
+  min-width: 100%;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 20px 0;
+  color: #8cffb1;
+  font-family: "Courier New", monospace;
+  font-size: clamp(7px, 1.4vw, 11px);
+  line-height: 1.05;
+  white-space: pre;
+  text-align: left;
+  text-shadow: 0 0 7px #8cffb144;
+  animation: lainFlicker 5s infinite;
+}
+
+.lain-caption {
+  text-align: center;
+  padding: 18px 0;
+  border-top: 1px solid #315640;
+  border-bottom: 1px solid #315640;
+}
+
+.lain-caption span {
+  font-size: clamp(11px, 2.5vw, 16px);
+  letter-spacing: 2px;
+}
+
+.lain-caption p {
+  color: #698875;
+  font-size: 9px;
+  letter-spacing: 1px;
+  line-height: 1.8;
+}
+
+.lain-footer {
+  padding-top: 16px;
+}
+
+@keyframes lainBlink {
+  0%, 45%, 100% { opacity: 1; }
+  50%, 85% { opacity: .3; }
+}
+
+@keyframes lainGlitch {
+  0%, 90%, 100% { transform: translateX(0); }
+  92% { transform: translateX(-2px); }
+  94% { transform: translateX(2px); }
+  96% { transform: translateX(-1px); }
+}
+
+@keyframes lainFlicker {
+  0%, 96%, 98%, 100% { opacity: 1; }
+  97% { opacity: .78; }
+  99% { opacity: .9; }
+}
+
+@media (max-width: 480px) {
+  .lain-terminal {
+    padding: 14px;
+  }
+
+  .lain-topbar,
+  .lain-footer {
+    font-size: 8px;
+  }
+
+  .lain-art {
+    font-size: 8px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lain-terminal *,
+  .lain-terminal::before {
+    animation: none !important;
+  }
+}
+</style>
+
+<script>
+(function () {
+  const clock = document.getElementById("lain-clock");
+
+  function updateClock() {
+    if (!clock) return;
+
+    clock.textContent = new Date().toLocaleTimeString(
+      "en-GB",
+      { hour12: false }
+    ) + " // ONLINE";
+  }
+
+  updateClock();
+  setInterval(updateClock, 1000);
+})();
+</script>
+```
