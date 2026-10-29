@@ -4,76 +4,65 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WIRED//404 — Lost in the Network</title>
 
-<title>WIRED//404 — Lain Terminal</title>
+<!-- GIF FRAME DECODER -->
+<script src="https://unpkg.com/gifler@0.1.0/gifler.min.js"></script>
 
 <style>
 :root {
+  --bg: #050706;
+  --green: #a5ff00;
+  --pink: #f05bff;
   --lain-green: #8cffb1;
-  --lain-bright: #a5ff00;
-  --lain-pink: #f05bff;
-  --lain-dim: #47785b;
-  --lain-bg: #050706;
-  --lain-panel: #0b100d;
-  --lain-line: #263526;
+  --muted: #7d897b;
+  --panel: #0b100d;
+  --line: #263526;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 body {
   margin: 0;
-  padding: 25px 12px;
-  background: var(--lain-bg);
+  padding: 24px 12px;
+  background: var(--bg);
   color: #e5eee4;
   font-family: "Courier New", monospace;
+  overflow-x: hidden;
 }
 
-
-
-
-
-  
+/* MAIN TERMINAL */
 
 .lain-terminal {
   position: relative;
   width: min(100%, 760px);
   margin: 30px auto;
   padding: 22px;
-  box-sizing: border-box;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  box-shadow: 0 0 25px #a5ff0010;
   overflow: hidden;
-  color: var(--lain-green);
-  background: var(--lain-bg);
-  border: 1px solid #315640;
-  box-shadow:
-    0 0 25px #41ff8410,
-    inset 0 0 35px #00ff1608;
 }
 
+/* SCANLINES */
 
-
-
-
-
-  
 .lain-terminal::before {
   content: "";
   position: absolute;
   inset: 0;
   pointer-events: none;
   z-index: 5;
-
   background: repeating-linear-gradient(
     to bottom,
     transparent 0px,
     transparent 3px,
-    #00000028 4px
+    #00000025 4px
   );
 }
 
-
-
-
-
-
-  
+/* HEADER */
 
 .lain-topbar,
 .lain-footer {
@@ -81,182 +70,161 @@ body {
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 10px;
+  color: var(--muted);
   font-size: 10px;
   letter-spacing: 1px;
-  color: var(--lain-dim);
 }
 
 .lain-status {
-  animation: lainBlink 1.6s infinite;
+  color: var(--green);
+  animation: blink 1.6s infinite;
 }
 
-.lain-status::first-letter {
-  color: var(--lain-bright);
-}
-
-
-
-
-
-
-  
+/* TITLE */
 
 .lain-title {
   text-align: center;
-  padding: 30px 0 15px;
+  padding: 30px 0 20px;
 }
 
 .glitch {
-  position: relative;
   display: inline-block;
+  position: relative;
+  color: var(--lain-green);
   font-size: clamp(30px, 7vw, 52px);
   font-weight: bold;
   letter-spacing: 8px;
-  color: var(--lain-green);
-  text-shadow:
-    2px 0 var(--lain-pink),
-    -2px 0 #00eaff;
-
-  animation: lainGlitch 4s infinite;
+  text-shadow: 2px 0 var(--pink), -2px 0 #00eaff;
+  animation: glitch 4s infinite;
 }
 
 .glitch::before {
   content: attr(data-text);
   position: absolute;
   inset: 0;
-  color: var(--lain-pink);
+  color: var(--pink);
   opacity: 0;
-  transform: translateX(-2px);
-  animation: lainGhost 4s infinite;
   pointer-events: none;
+  animation: ghost 4s infinite;
 }
 
 .lain-title p {
+  color: #b4c9b9;
   font-size: 10px;
   letter-spacing: 4px;
-  color: #b4c9b9;
+  line-height: 1.8;
 }
 
+/* ARTWORK SECTIONS */
 
-
-
-
-  
+.art-label {
+  color: #698875;
+  font-size: 10px;
+  letter-spacing: 2px;
+  padding: 12px 0;
+  margin-top: 12px;
+  border-top: 1px solid var(--line);
+}
 
 .lain-art-container {
-  position: relative;
   width: 100%;
   overflow-x: auto;
   overflow-y: hidden;
-  scrollbar-color: #315640 var(--lain-bg);
   background:
-    radial-gradient(
-      ellipse at center,
-      #16300924,
-      transparent 75%
-    );
+    radial-gradient(ellipse at center, #16300920, transparent 75%);
+  scrollbar-color: #315640 var(--bg);
 }
 
 .lain-art {
   display: block;
-  width: 100%;
-  min-width: 0;
-  box-sizing: border-box;
+  width: max-content;
+  min-width: 100%;
   margin: 0;
-  padding: 20px 0;
-
+  padding: 18px 0;
   color: var(--lain-green);
   font-family: "Courier New", monospace;
-  font-size: clamp(4px, 1.05vw, 8px);
+  font-size: 8px;
   line-height: 1.05;
   font-weight: bold;
-  letter-spacing: 0;
   white-space: pre;
   text-align: left;
-
   text-shadow: 0 0 7px #8cffb144;
-  animation: lainFlicker 5s infinite;
+  animation: flicker 5s infinite;
 }
 
+#lain-animated-art {
+  color: var(--green);
+  font-size: 7px;
+  text-shadow: 0 0 6px #a5ff0055;
+}
 
-
-
-
-  
+/* CAPTION */
 
 .lain-caption {
   text-align: center;
-  padding: 18px 0;
-  border-top: 1px solid #315640;
-  border-bottom: 1px solid #315640;
+  padding: 20px 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
 }
 
 .lain-caption span {
   display: block;
+  color: var(--lain-green);
   font-size: clamp(10px, 2.5vw, 16px);
   letter-spacing: 2px;
-  text-shadow: 0 0 8px #8cffb144;
 }
 
 .lain-caption p {
-  color: #698875;
+  color: var(--muted);
   font-size: 9px;
-  letter-spacing: 1px;
   line-height: 1.8;
+  letter-spacing: 1px;
 }
-
-
-
-
-  
 
 .lain-footer {
   padding-top: 16px;
 }
 
-/* hiden gif */
+/* HIDDEN RENDERING CANVAS */
 
 #lain-source {
   position: fixed;
-  width: 1px;
-  height: 1px;
-  left: -10px;
+  left: -10000px;
   top: 0;
-  opacity: 0.001;
   pointer-events: none;
 }
 
-/* animay */
+/* ANIMATIONS */
 
-@keyframes lainBlink {
+@keyframes blink {
   0%, 45%, 100% { opacity: 1; }
   50%, 85% { opacity: .3; }
 }
 
-@keyframes lainGlitch {
+@keyframes glitch {
   0%, 90%, 100% { transform: translateX(0); }
   92% { transform: translateX(-2px); }
   94% { transform: translateX(2px); }
   96% { transform: translateX(-1px); }
 }
 
-@keyframes lainGhost {
+@keyframes ghost {
   0%, 90%, 100% { opacity: 0; }
   92%, 96% { opacity: .65; }
   94% { opacity: 0; }
 }
 
-@keyframes lainFlicker {
+@keyframes flicker {
   0%, 96%, 98%, 100% { opacity: 1; }
   97% { opacity: .78; }
   99% { opacity: .9; }
 }
 
-/* mobile */
+/* MOBILE */
 
 @media (max-width: 480px) {
   body {
-    padding: 10px 5px;
+    padding: 8px 4px;
   }
 
   .lain-terminal {
@@ -269,15 +237,13 @@ body {
   }
 
   .lain-art {
-    font-size: 4px;
+    font-size: 6px;
   }
 
   .glitch {
     letter-spacing: 4px;
   }
 }
-
-/* aces */
 
 @media (prefers-reduced-motion: reduce) {
   .lain-terminal *,
@@ -293,41 +259,89 @@ body {
 <section class="lain-terminal">
 
   <div class="lain-topbar">
-    <span class="lain-status">
-      ● CONNECTION ESTABLISHED
-    </span>
+    <span class="lain-status">● CONNECTION ESTABLISHED</span>
     <span>FILE: 001-LAIN</span>
   </div>
 
   <div class="lain-title">
-    <span
-      class="glitch"
-      data-text="岩倉 玲音"
-    >岩倉 玲音</span>
-
+    <span class="glitch" data-text="岩倉 玲音">岩倉 玲音</span>
     <p>PRESENT DAY · PRESENT TIME</p>
   </div>
 
+  <!-- =================================
+       FIRST ART: STATIC LAIN SYMBOL ART
+       ================================= -->
 
-
-
-
-
-
-  
+  <div class="art-label">// STATIC TRACE — 001</div>
 
   <div class="lain-art-container">
-    <pre id="lain-art" class="lain-art">INITIALIZING WIRED CONNECTION...
-LOADING LAIN.EXE...
-PLEASE WAIT...</pre>
+<pre class="lain-art">
+                     .:--==+++**+--:.    .    .
+                .=#▒▓███▓▓███▓▒░░░##+====:.   ..
+             :*▒██████████▓▓▒▒▒▒▒▓▓░-  .*░+-...-.
+           :#██████████████▓▓▒░░▒▓█░=:   =▒█░*=+-
+         .+▒███████████████████▓▓▓██▓░*==+++#+::.
+        :░▓███████████████████░*--+░███▒#=---
+       +▒▓██████████████▓▓███▓-    =#░▒▒▒*=-.
+      ░████████████████▓▓▓▓▓██▓#+=+++-.-++-.
+     #██████████▓███████▓▓████████▓░+-.:=:
+    =██████████▓▓████▓██▓▓▓▓▓█████=      :-
+    ▒█████████▓▓▓███████▓▒▒▓▓██████▒#+:
+   :▓█████████▓██████████▓▓▓▓▓████████▓=
+   =█████████████████████████████▓█████▓+
+   =█████████████████████████████░#█▓▓███▒#+
+   =███████████████▓#++▓█▓#▓█▒░#▓░*▓▓#▒███████▓▒░
+   :▓██████████████▓*+-+▓=-+###*#####*#▒██████████+
+   .▓███████████████░=  +   :=+*░▓█████▓█▒▒███████+
+    ██████████████###-        .*████████▒█▒████▒██#
+    ▓██████████##▒░#*-.        :#*#▓███▒░░##██░▓██#
+    ▒█████████▒#▒████*           :-+#░░░#+=+▒███▓▓#
+    =░░███████████████-              ..   .-▓████▒██
+     --████████▓=▒███▒.                    .▒██████
+       ▓█░█████▒###*-                       #██████
+       +█+=████▓-                           #█████░
+        #. ▒███▒░.        .                -██████
+           +▒+██▓░:                       -#▓████▓-
+            # -████+        .            -+=░██▓█#
+            .  .-.░#==.                :=-==░█▓▒▓+
+                     =#*=:           .:-----#▓▒░▒-
+                   :-=+*#░#*=:.  .:::---. .-#▓▒░░:
+                  -=----===+*##░░░░*=-:    :░▒░░#
+                :===--:::-=-:::=+++=+==-::-+▒▒░#*
+              .=*++###░░░▒░#****=..::--:::---*░░*:
+            .--==+==++#░░▒▓▓▒░░░░*:  .=**#+++░▒▒#
+          .    .  .::::-*░░▒▒░##:.::.:::::.:+▒▒█=
+          : -  .   .:::-+#░▒░░#=            .*##
+        :  =.  .   :-++=+##+=.             =▓▒.
+        -: :-  ..  .: ..::..::::.          -░:
+        :.  *+  ..  .:.   .    .:-:.       =.
+       ..   :+:   .  ::.         .::
+       +:  : ==.      .:
+       #░  :. ::       .:
+       #▓*  : .::       :.
+      :: +# .:.--=.      :.
+      -   --.+-=--=:      :
+     :.    ::::.::::.     ..
+     +     -:--..:::-:      ..
+    :*      -=++ =+==-==:   ..::
+    =*.     .::= .:-=-.+#=. :=:=+-:
+</pre>
+  </div>
+
+  <!-- =================================
+       SECOND ART: ANIMATED GIF TO ASCII
+       ================================= -->
+
+  <div class="art-label">// LIVE SIGNAL — 002</div>
+
+  <div class="lain-art-container">
+    <pre id="lain-animated-art" class="lain-art">CONNECTING TO THE WIRED...
+LOADING LAIN.GIF...</pre>
   </div>
 
   <div class="lain-caption">
     <span>░▒▓ L A I N  I W A K U R A ▓▒░</span>
-
-    <p>
-      NO MATTER WHERE YOU GO, EVERYONE IS CONNECTED.
-    </p>
+    <p>NO MATTER WHERE YOU GO, EVERYONE IS CONNECTED.</p>
   </div>
 
   <div class="lain-footer">
@@ -338,37 +352,31 @@ PLEASE WAIT...</pre>
 </section>
 
 <!--
- original gif
+  IMPORTANT:
+  Place lain.gif in the SAME FOLDER as index.html.
+  Use the exact filename and capitalization.
 -->
 
-<img
-  id="lain-source"
-  src="https://i.pinimg.com/originals/b4/ba/34/b4ba34317251ed3ee9cbe2ea05ae7550.gif"
-  alt=""
-/>
+<canvas id="lain-source" aria-hidden="true"></canvas>
 
 <script>
 (() => {
-  const img = document.getElementById("lain-source");
-  const output = document.getElementById("lain-art");
+  const output = document.getElementById("lain-animated-art");
+  const source = document.getElementById("lain-source");
   const clock = document.getElementById("lain-clock");
 
-  const canvas = document.createElement("canvas");
-  const ctx = canvas.getContext("2d", {
+  const columns = 90;
+  const chars = " .,:;irsXA253hMHGS#9B&@";
+
+  const smallCanvas = document.createElement("canvas");
+  const smallCtx = smallCanvas.getContext("2d", {
     willReadFrequently: true
   });
 
-  // ASCII character
-  const chars = " .,:;irsXA253hMHGS#9B&@";
-
-  // Higher number = more detaile
-  const columns = 100;
-
+  let lastFrameTime = 0;
   let started = false;
-  let animationFrame = 0;
-  let lastRender = 0;
 
-  // LIVE TERMINAL CLOCK
+  // LIVE CLOCK
 
   function updateClock() {
     clock.textContent =
@@ -380,68 +388,73 @@ PLEASE WAIT...</pre>
   updateClock();
   setInterval(updateClock, 1000);
 
-  // CONVERTER
+  // CONVERT EVERY DECODED GIF FRAME TO ASCII
 
-  function renderASCII() {
-    if (
-      !img.complete ||
-      !img.naturalWidth ||
-      !img.naturalHeight
-    ) {
-      return;
-    }
+  function convertFrame(ctx) {
+    const now = performance.now();
 
-    // Preserve 
-    // Text 
+    // Avoid doing expensive pixel conversion too often.
+    if (now - lastFrameTime < 75) return;
+    lastFrameTime = now;
+
+    const width = ctx.canvas.width;
+    const height = ctx.canvas.height;
+
+    if (!width || !height) return;
+
     const rows = Math.max(
       1,
-      Math.round(
-        columns *
-        img.naturalHeight /
-        img.naturalWidth *
-        0.48
-      )
+      Math.round(columns * height / width * 0.48)
     );
 
-    canvas.width = columns;
-    canvas.height = rows;
+    smallCanvas.width = columns;
+    smallCanvas.height = rows;
 
-    ctx.drawImage(img, 0, 0, columns, rows);
-
-    const pixels = ctx.getImageData(
+    smallCtx.clearRect(0, 0, columns, rows);
+    smallCtx.drawImage(
+      ctx.canvas,
+      0, 0, width, height,
       0, 0, columns, rows
-    ).data;
+    );
+
+    let pixels;
+
+    try {
+      pixels = smallCtx.getImageData(
+        0, 0, columns, rows
+      ).data;
+    } catch (error) {
+      output.textContent = "ERROR READING FRAME";
+      return;
+    }
 
     let result = "";
 
     for (let y = 0; y < rows; y++) {
       for (let x = 0; x < columns; x++) {
         const i = (y * columns + x) * 4;
-
-        const r = pixels[i];
-        const g = pixels[i + 1];
-        const b = pixels[i + 2];
         const alpha = pixels[i + 3];
 
-        // Transparent pixels 
         if (alpha < 30) {
           result += " ";
           continue;
         }
 
-        // Perceived 
+        const r = pixels[i];
+        const g = pixels[i + 1];
+        const b = pixels[i + 2];
+
         const brightness =
           0.299 * r +
           0.587 * g +
           0.114 * b;
 
-        const index = Math.floor(
-          brightness / 256 * chars.length
+        const index = Math.min(
+          chars.length - 1,
+          Math.floor(brightness / 256 * chars.length)
         );
 
-        result += chars[
-          Math.min(index, chars.length - 1)
-        ];
+        result += chars[index];
       }
 
       result += "\n";
@@ -450,67 +463,51 @@ PLEASE WAIT...</pre>
     output.textContent = result;
   }
 
-  // Read 
-  // Repeating 
+  // LOAD AND DECODE THE GIF FRAME BY FRAME
 
-  function animate(timestamp) {
-    if (!started) return;
-
-    if (timestamp - lastRender >= 100) {
-      try {
-        renderASCII();
-      } catch (error) {
-        output.textContent =
-          "SIGNAL ERROR // UNABLE TO READ GIF";
-        console.error(error);
-        started = false;
-        return;
-      }
-
-      lastRender = timestamp;
-    }
-
-    animationFrame = requestAnimationFrame(animate);
-  }
-
-  function startAnimation() {
+  function startGIF() {
     if (started) return;
 
-    started = true;
-    renderASCII();
-
-    animationFrame = requestAnimationFrame(animate);
-  }
-
-  // Wait until it loaded
-
-  if (img.complete && img.naturalWidth > 0) {
-    startAnimation();
-  } else {
-    img.addEventListener(
-      "load",
-      startAnimation,
-      { once: true }
-    );
-
-    img.addEventListener("error", () => {
+    if (typeof window.gifler !== "function") {
       output.textContent =
-        "ERROR 404 // LAIN SIGNAL NOT FOUND\n" +
-        "CHECK THAT lain.gif IS IN THE CORRECT FOLDER.";
-    }, { once: true });
+        "GIF DECODER FAILED TO LOAD\n" +
+        "CHECK YOUR INTERNET CONNECTION.";
+      return;
+    }
+
+    started = true;
+
+    try {
+      window.gifler("lain.gif").frames(
+        source,
+        function (ctx, frame) {
+          // Draw each decoded frame onto the source canvas.
+          ctx.clearRect(
+            0, 0,
+            ctx.canvas.width,
+            ctx.canvas.height
+          );
+
+          ctx.drawImage(
+            frame.buffer,
+            frame.x,
+            frame.y
+          );
+
+          // Convert that actual frame into text.
+          convertFrame(ctx);
+        },
+        true
+      );
+    } catch (error) {
+      started = false;
+      output.textContent =
+        "SIGNAL LOST // CHECK LAIN.GIF";
+      console.error(error);
+    }
   }
 
-  // Stop when hiden
-  // Resume when retun
-
-  document.addEventListener("visibilitychange", () => {
-    if (document.hidden) {
-      started = false;
-      cancelAnimationFrame(animationFrame);
-    } else if (img.complete && img.naturalWidth > 0) {
-      startAnimation();
-    }
-  });
+  startGIF();
 
 })();
 </script>
