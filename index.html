@@ -1,107 +1,65 @@
 
-<section class="lain-terminal">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <div class="lain-topbar">
-    <span class="lain-status">● CONNECTION ESTABLISHED</span>
-    <span>FILE: 001-LAIN</span>
-  </div>
-
-  <div class="lain-title">
-    <span class="glitch" data-text="岩倉 玲音">岩倉 玲音</span>
-    <p> PRESENT DAY · PRESENT TIME </p>
-  </div>
-
-  <div class="lain-art-container">
-<pre class="lain-art">
-                     .:--==+++**+--:.    .    .
-                .=#▒▓███▓▓███▓▒░░░##+====:.   ..
-             :*▒██████████▓▓▒▒▒▒▒▓▓░-  .*░+-...-.
-           :#██████████████▓▓▒░░▒▓█░=:   =▒█░*=+-
-         .+▒███████████████████▓▓▓██▓░*==+++#+::.
-        :░▓███████████████████░*--+░███▒#=--- 
-       +▒▓██████████████▓▓███▓-    =#░▒▒▒*=-.
-      ░████████████████▓▓▓▓▓██▓#+=+++-.-++-.
-     #██████████▓███████▓▓████████▓░+-.:=:
-    =██████████▓▓████▓██▓▓▓▓▓█████=      :-
-    ▒█████████▓▓▓███████▓▒▒▓▓██████▒#+:
-   :▓█████████▓██████████▓▓▓▓▓████████▓=
-   =█████████████████████████████▓█████▓+
-   =█████████████████████████████░#█▓▓███▒#+
-   =███████████████▓#++▓█▓#▓█▒░#▓░*▓▓#▒███████▓▒░
-   :▓██████████████▓*+-+▓=-+###*#####*#▒██████████+
-   .▓███████████████░=  +   :=+*░▓█████▓█▒▒███████+
-    ██████████████###-        .*████████▒█▒████▒██#
-    ▓██████████##▒░#*-.        :#*#▓███▒░░##██░▓██#
-    ▒█████████▒#▒████*           :-+#░░░#+=+▒███▓▓#
-    =░░███████████████-              ..   .-▓████▒██
-     --████████▓=▒███▒.                    .▒██████
-       ▓█░█████▒###*-                       #██████
-       +█+=████▓-                           #█████░
-        #. ▒███▒░.        .                -██████
-           +▒+██▓░:                       -#▓████▓-
-            # -████+        .            -+=░██▓█#
-            .  .-.░#==.                :=-==░█▓▒▓+
-                     =#*=:           .:-----#▓▒░▒-
-                   :-=+*#░#*=:.  .:::---. .-#▓▒░░:
-                  -=----===+*##░░░░*=-:    :░▒░░#
-                :===--:::-=-:::=+++=+==-::-+▒▒░#*
-              .=*++###░░░▒░#****=..::--:::---*░░*:
-            .--==+==++#░░▒▓▓▒░░░░*:  .=**#+++░▒▒#
-          .    .  .::::-*░░▒▒░##:.::.:::::.:+▒▒█=
-          : -  .   .:::-+#░▒░░#=            .*##
-        :  =.  .   :-++=+##+=.             =▓▒.
-        -: :-  ..  .: ..::..::::.          -░:
-        :.  *+  ..  .:.   .    .:-:.       =.
-       ..   :+:   .  ::.         .::
-       +:  : ==.      .:             
-       #░  :. ::       .:                  
-       #▓*  : .::       :.                 
-      :: +# .:.--=.      :.           
-      -   --.+-=--=:      :           
-     :.    ::::.::::.     ..            
-     +     -:--..:::-:      ..
-    :*      -=++ =+==-==:   ..::
-    =*.     .::= .:-=-.+#=. :=:=+-:
-</pre>
-  </div>
-
-  <div class="lain-caption">
-    <span>░▒▓ L A I N  I W A K U R A ▓▒░</span>
-    <p>NO MATTER WHERE YOU GO, EVERYONE IS CONNECTED.</p>
-  </div>
-
-  <div class="lain-footer">
-    <span>WIRED://IDENTITY/001</span>
-    <span id="lain-clock">CONNECTING...</span>
-  </div>
-
-</section>
+<title>WIRED//404 — Lain Terminal</title>
 
 <style>
-.lain-terminal {
+:root {
   --lain-green: #8cffb1;
+  --lain-bright: #a5ff00;
+  --lain-pink: #f05bff;
   --lain-dim: #47785b;
+  --lain-bg: #050706;
+  --lain-panel: #0b100d;
+  --lain-line: #263526;
+}
+
+body {
+  margin: 0;
+  padding: 25px 12px;
+  background: var(--lain-bg);
+  color: #e5eee4;
+  font-family: "Courier New", monospace;
+}
+
+
+
+
+
+  
+
+.lain-terminal {
   position: relative;
-  width: min(100%, 720px);
-  margin: 40px auto;
+  width: min(100%, 760px);
+  margin: 30px auto;
   padding: 22px;
   box-sizing: border-box;
   overflow: hidden;
   color: var(--lain-green);
-  background: #050807;
+  background: var(--lain-bg);
   border: 1px solid #315640;
-  font-family: "Courier New", monospace;
-  box-shadow: 0 0 25px #41ff8410,
-              inset 0 0 35px #00ff1608;
+  box-shadow:
+    0 0 25px #41ff8410,
+    inset 0 0 35px #00ff1608;
 }
 
-/* scanlines */
+
+
+
+
+
+  
 .lain-terminal::before {
   content: "";
   position: absolute;
   inset: 0;
   pointer-events: none;
-  z-index: 2;
+  z-index: 5;
+
   background: repeating-linear-gradient(
     to bottom,
     transparent 0px,
@@ -109,6 +67,13 @@
     #00000028 4px
   );
 }
+
+
+
+
+
+
+  
 
 .lain-topbar,
 .lain-footer {
@@ -125,18 +90,45 @@
   animation: lainBlink 1.6s infinite;
 }
 
+.lain-status::first-letter {
+  color: var(--lain-bright);
+}
+
+
+
+
+
+
+  
+
 .lain-title {
   text-align: center;
   padding: 30px 0 15px;
 }
 
 .glitch {
+  position: relative;
   display: inline-block;
   font-size: clamp(30px, 7vw, 52px);
   font-weight: bold;
   letter-spacing: 8px;
-  text-shadow: 2px 0 #ff315c, -2px 0 #00eaff;
+  color: var(--lain-green);
+  text-shadow:
+    2px 0 var(--lain-pink),
+    -2px 0 #00eaff;
+
   animation: lainGlitch 4s infinite;
+}
+
+.glitch::before {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  color: var(--lain-pink);
+  opacity: 0;
+  transform: translateX(-2px);
+  animation: lainGhost 4s infinite;
+  pointer-events: none;
 }
 
 .lain-title p {
@@ -145,27 +137,52 @@
   color: #b4c9b9;
 }
 
+
+
+
+
+  
+
 .lain-art-container {
+  position: relative;
   width: 100%;
   overflow-x: auto;
-  scrollbar-color: #315640 #050807;
+  overflow-y: hidden;
+  scrollbar-color: #315640 var(--lain-bg);
+  background:
+    radial-gradient(
+      ellipse at center,
+      #16300924,
+      transparent 75%
+    );
 }
 
 .lain-art {
-  width: max-content;
-  min-width: 100%;
+  display: block;
+  width: 100%;
+  min-width: 0;
   box-sizing: border-box;
   margin: 0;
   padding: 20px 0;
-  color: #8cffb1;
+
+  color: var(--lain-green);
   font-family: "Courier New", monospace;
-  font-size: clamp(7px, 1.4vw, 11px);
+  font-size: clamp(4px, 1.05vw, 8px);
   line-height: 1.05;
+  font-weight: bold;
+  letter-spacing: 0;
   white-space: pre;
   text-align: left;
+
   text-shadow: 0 0 7px #8cffb144;
   animation: lainFlicker 5s infinite;
 }
+
+
+
+
+
+  
 
 .lain-caption {
   text-align: center;
@@ -175,8 +192,10 @@
 }
 
 .lain-caption span {
-  font-size: clamp(11px, 2.5vw, 16px);
+  display: block;
+  font-size: clamp(10px, 2.5vw, 16px);
   letter-spacing: 2px;
+  text-shadow: 0 0 8px #8cffb144;
 }
 
 .lain-caption p {
@@ -186,9 +205,28 @@
   line-height: 1.8;
 }
 
+
+
+
+  
+
 .lain-footer {
   padding-top: 16px;
 }
+
+/* hiden gif */
+
+#lain-source {
+  position: fixed;
+  width: 1px;
+  height: 1px;
+  left: -10px;
+  top: 0;
+  opacity: 0.001;
+  pointer-events: none;
+}
+
+/* animay */
 
 @keyframes lainBlink {
   0%, 45%, 100% { opacity: 1; }
@@ -202,15 +240,27 @@
   96% { transform: translateX(-1px); }
 }
 
+@keyframes lainGhost {
+  0%, 90%, 100% { opacity: 0; }
+  92%, 96% { opacity: .65; }
+  94% { opacity: 0; }
+}
+
 @keyframes lainFlicker {
   0%, 96%, 98%, 100% { opacity: 1; }
   97% { opacity: .78; }
   99% { opacity: .9; }
 }
 
+/* mobile */
+
 @media (max-width: 480px) {
+  body {
+    padding: 10px 5px;
+  }
+
   .lain-terminal {
-    padding: 14px;
+    padding: 12px;
   }
 
   .lain-topbar,
@@ -219,9 +269,15 @@
   }
 
   .lain-art {
-    font-size: 8px;
+    font-size: 4px;
+  }
+
+  .glitch {
+    letter-spacing: 4px;
   }
 }
+
+/* aces */
 
 @media (prefers-reduced-motion: reduce) {
   .lain-terminal *,
@@ -230,22 +286,234 @@
   }
 }
 </style>
+</head>
+
+<body>
+
+<section class="lain-terminal">
+
+  <div class="lain-topbar">
+    <span class="lain-status">
+      ● CONNECTION ESTABLISHED
+    </span>
+    <span>FILE: 001-LAIN</span>
+  </div>
+
+  <div class="lain-title">
+    <span
+      class="glitch"
+      data-text="岩倉 玲音"
+    >岩倉 玲音</span>
+
+    <p>PRESENT DAY · PRESENT TIME</p>
+  </div>
+
+
+
+
+
+
+
+  
+
+  <div class="lain-art-container">
+    <pre id="lain-art" class="lain-art">INITIALIZING WIRED CONNECTION...
+LOADING LAIN.EXE...
+PLEASE WAIT...</pre>
+  </div>
+
+  <div class="lain-caption">
+    <span>░▒▓ L A I N  I W A K U R A ▓▒░</span>
+
+    <p>
+      NO MATTER WHERE YOU GO, EVERYONE IS CONNECTED.
+    </p>
+  </div>
+
+  <div class="lain-footer">
+    <span>WIRED://IDENTITY/001</span>
+    <span id="lain-clock">CONNECTING...</span>
+  </div>
+
+</section>
+
+<!--
+ original gif
+-->
+
+<img
+  id="lain-source"
+  src="https://i.pinimg.com/originals/b4/ba/34/b4ba34317251ed3ee9cbe2ea05ae7550.gif"
+  alt=""
+/>
 
 <script>
-(function () {
+(() => {
+  const img = document.getElementById("lain-source");
+  const output = document.getElementById("lain-art");
   const clock = document.getElementById("lain-clock");
 
-  function updateClock() {
-    if (!clock) return;
+  const canvas = document.createElement("canvas");
+  const ctx = canvas.getContext("2d", {
+    willReadFrequently: true
+  });
 
-    clock.textContent = new Date().toLocaleTimeString(
-      "en-GB",
-      { hour12: false }
-    ) + " // ONLINE";
+  // ASCII character
+  const chars = " .,:;irsXA253hMHGS#9B&@";
+
+  // Higher number = more detaile
+  const columns = 100;
+
+  let started = false;
+  let animationFrame = 0;
+  let lastRender = 0;
+
+  // LIVE TERMINAL CLOCK
+
+  function updateClock() {
+    clock.textContent =
+      new Date().toLocaleTimeString("en-GB", {
+        hour12: false
+      }) + " // ONLINE";
   }
 
   updateClock();
   setInterval(updateClock, 1000);
+
+  // CONVERTER
+
+  function renderASCII() {
+    if (
+      !img.complete ||
+      !img.naturalWidth ||
+      !img.naturalHeight
+    ) {
+      return;
+    }
+
+    // Preserve 
+    // Text 
+    const rows = Math.max(
+      1,
+      Math.round(
+        columns *
+        img.naturalHeight /
+        img.naturalWidth *
+        0.48
+      )
+    );
+
+    canvas.width = columns;
+    canvas.height = rows;
+
+    ctx.drawImage(img, 0, 0, columns, rows);
+
+    const pixels = ctx.getImageData(
+      0, 0, columns, rows
+    ).data;
+
+    let result = "";
+
+    for (let y = 0; y < rows; y++) {
+      for (let x = 0; x < columns; x++) {
+        const i = (y * columns + x) * 4;
+
+        const r = pixels[i];
+        const g = pixels[i + 1];
+        const b = pixels[i + 2];
+        const alpha = pixels[i + 3];
+
+        // Transparent pixels 
+        if (alpha < 30) {
+          result += " ";
+          continue;
+        }
+
+        // Perceived 
+        const brightness =
+          0.299 * r +
+          0.587 * g +
+          0.114 * b;
+
+        const index = Math.floor(
+          brightness / 256 * chars.length
+        );
+
+        result += chars[
+          Math.min(index, chars.length - 1)
+        ];
+      }
+
+      result += "\n";
+    }
+
+    output.textContent = result;
+  }
+
+  // Read 
+  // Repeating 
+
+  function animate(timestamp) {
+    if (!started) return;
+
+    if (timestamp - lastRender >= 100) {
+      try {
+        renderASCII();
+      } catch (error) {
+        output.textContent =
+          "SIGNAL ERROR // UNABLE TO READ GIF";
+        console.error(error);
+        started = false;
+        return;
+      }
+
+      lastRender = timestamp;
+    }
+
+    animationFrame = requestAnimationFrame(animate);
+  }
+
+  function startAnimation() {
+    if (started) return;
+
+    started = true;
+    renderASCII();
+
+    animationFrame = requestAnimationFrame(animate);
+  }
+
+  // Wait until it loaded
+
+  if (img.complete && img.naturalWidth > 0) {
+    startAnimation();
+  } else {
+    img.addEventListener(
+      "load",
+      startAnimation,
+      { once: true }
+    );
+
+    img.addEventListener("error", () => {
+      output.textContent =
+        "ERROR 404 // LAIN SIGNAL NOT FOUND\n" +
+        "CHECK THAT lain.gif IS IN THE CORRECT FOLDER.";
+    }, { once: true });
+  }
+
+  // Stop when hiden
+  // Resume when retun
+
+  document.addEventListener("visibilitychange", () => {
+    if (document.hidden) {
+      started = false;
+      cancelAnimationFrame(animationFrame);
+    } else if (img.complete && img.naturalWidth > 0) {
+      startAnimation();
+    }
+  });
+
 })();
 </script>
-```
+
+</body>
+</html>
